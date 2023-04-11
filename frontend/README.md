@@ -5,6 +5,7 @@ Node.js version 18.14.2 or higher
 # Before run
 
 Run `npm install` for download required libraries.
+Run `npm install -g @angular/cli` for download AngularCLI
 
 # ISProject
 
