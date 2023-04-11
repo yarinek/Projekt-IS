@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  db:
+    container_name: "projektkrypto_db_1"
+    image: postgres:15.2-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "baza_krypto"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080

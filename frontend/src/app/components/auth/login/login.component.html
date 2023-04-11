@@ -1,0 +1,59 @@
+<!-- <div class="container">
+    <div class="content" [formGroup]="form">
+        <mat-form-field class="w-25" appearance="fill">
+            <mat-label>Nazwa użytkownika</mat-label>
+            <input matInput formControlName="username">
+        </mat-form-field>
+    
+        <mat-form-field class="w-25" appearance="fill">
+            <mat-label>Hasło</mat-label>
+            <input type="password" matInput formControlName="password">
+        </mat-form-field>
+        
+        <button [disabled]="form.invalid" (click)="login()" class="form__buttonContainer--button" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            Zaloguj
+        </button>
+    </div>
+</div> -->
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5" [formGroup]="form">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Logowanie</h2>
+                <p class="text-white-50 mb-5">Podaj swój login i hasło!</p>
+  
+                <div class="form-outline form-white mb-4">
+                    <mat-form-field class="w-25" appearance="fill">
+                        <mat-label>Nazwa użytkownika</mat-label>
+                        <input matInput formControlName="username">
+                    </mat-form-field>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                    <mat-form-field class="w-25" appearance="fill">
+                        <mat-label>Hasło</mat-label>
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+                </div>
+  
+                <button [disabled]="form.invalid" (click)="login()" mat-fab color="primary">
+                    Zaloguj
+                </button>
+              </div>
+  
+              <div>
+                <p class="mb-0">Nie masz konta? <a routerLink="/register" class="text-white-50 fw-bold">Zarejestruj się</a></p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,43 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Filtruj</mat-label>
+        <input style="color: aliceblue;" matInput (keyup)="applyFilter($event)" placeholder="Nazwa kryptowaluty" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Kryptowaluta </th>
+                <td mat-cell *matCellDef="let row">
+                    <img [src]="row.image" width="50" alt="">
+                    <span class="mx-2">{{row.symbol | uppercase}}</span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="current_price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cena </th>
+                <td mat-cell *matCellDef="let row"> {{row.current_price | currency:currency}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price_change_percentage_24h">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> 24h zmiana </th>
+                <td mat-cell *matCellDef="let row"> {{row.price_change_percentage_24h}}% </td>
+            </ng-container>
+
+            <ng-container matColumnDef="market_cap">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Kapitalizacja rynkowa </th>
+                <td mat-cell *matCellDef="let row"> {{row.market_cap | currency : currency}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr (click)="getDetails(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">Brak danych do filtru: "{{input.value}}"</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+    </div>
+</div>

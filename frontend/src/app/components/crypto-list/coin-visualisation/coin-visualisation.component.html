@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex mt-2">
+                <mat-form-field class="w-25" appearance="fill">
+                    <mat-label>Wybierz zakres dat</mat-label>
+                    <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+                      <input matStartDate formControlName="start">
+                      <input matEndDate formControlName="end">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                    <mat-error  *ngIf="form.invalid && !dateAfterTodayError"> <small class="form--error">Podaj zakres dat</small></mat-error>
+                    <mat-error  *ngIf="dateAfterTodayError"> <small class="form--error">Data początku zakresu nie może być późniejsza niż dzisiaj</small></mat-error>
+                  </mat-form-field>
+
+                  <button [disabled]="form.invalid" (click)="getDetails()" class="form__buttonContainer--buttonIcon" mat-fab color="primary">
+                    <mat-icon>search</mat-icon>
+                  </button>
+            </div>
+            <div class="d-flex">
+              <div class="form__buttonContainer">
+                <button (click)="fileInput.click()" class="form__buttonContainer--button" mat-fab color="primary">
+                  <span>Zaimportuj bazę</span>
+                  <input #fileInput type="file" (change)="importDatabase($event)" style="display:none;" />
+                </button>
+
+                <button (click)="exportDatabase()" class="form__buttonContainer--button" mat-fab color="primary">
+                  <span>Wyeksportuj bazę</span>
+                </button>
+
+                <button (click)="fileInput2.click()" class="form__buttonContainer--button" mat-fab color="primary">
+                  <span>Zaimportuj wydarzenia</span>
+                  <input #fileInput2 type="file" (change)="importEvents($event)" style="display:none;" />
+                </button>
+
+                <button (click)="exportEvents()" class="form__buttonContainer--button" mat-fab color="primary">
+                  <span>Wyeksportuj wydarzenia</span>
+                </button>
+              </div>
+            </div>
+
+            <canvas *ngIf="showChart" style="width: 300px;" baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"></canvas>
+
+            <table *ngIf="events.length" mat-table [dataSource]="events" matSort>
+
+              <ng-container matColumnDef="coin">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Waluta </th>
+                  <td mat-cell *matCellDef="let row">
+                      <img [src]="row.image" width="50" alt="">
+                      <span class="mx-2">{{row.coin}}</span>
+                  </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="category">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Kategoria </th>
+                  <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="startDate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Data rozpoczęcia </th>
+                  <td mat-cell *matCellDef="let row"> {{row.startDate}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="endDate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Data zakończenia </th>
+                  <td mat-cell *matCellDef="let row"> {{row.endDate}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Tytuł </th>
+                <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Link </th>
+                <td mat-cell *matCellDef="let row"> <a [href]="row.url" target="_blank">Kliknij żeby zobaczyć</a> </td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+              <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">Brak danych dla filtru</td>
+              </tr>
+          </table>
+
+          <span *ngIf="!events.length && filtered">Brak wydarzeń dla wybranego zakresu czasu</span>
+        </div>
+    </div>
+</div>

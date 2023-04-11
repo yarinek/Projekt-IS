@@ -1,0 +1,26 @@
+[
+	{
+		"endDate": "2021-04-01",
+		"startDate": "2021-06-01",
+		"url": "https://twitter.com/elonmusk/status/1377567762919292938?s=20",
+		"title": "someTitle1",
+		"category": "POP_CULTURE",
+		"coin": "dogecoin"
+	},
+	{
+		"endDate": "2021-04-01",
+		"startDate": "2021-06-01",
+		"url": "https://www.parkiet.com/waluty/art36287341-luna-historia-spadajacej-gwiazdy-kryptowalut",
+		"title": "someTitle2",
+		"category": "ECONOMY",
+		"coin": "terra-luna"
+	},
+	{
+		"endDate": "2022-01-01",
+		"startDate": "2023-01-01",
+		"url": "https://pl.investing.com/economic-calendar/interest-rate-decision-168",
+		"title": "someTitle3",
+		"category": "ECONOMY",
+		"coin": "bitcoin"
+	}
+]
