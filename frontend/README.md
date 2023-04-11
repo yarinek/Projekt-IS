@@ -1,3 +1,11 @@
+# Required
+
+Node.js version 18.14.2 or higher
+
+# Before run
+
+Run `npm install` for download required libraries.
+
 # ISProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
