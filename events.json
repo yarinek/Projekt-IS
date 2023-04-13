@@ -1,26 +1,43 @@
 [
 	{
-		"endDate": "2021-04-01",
-		"startDate": "2021-06-01",
+		"endDate": "2021-06-01",
+		"startDate": "2021-04-01",
 		"url": "https://twitter.com/elonmusk/status/1377567762919292938?s=20",
-		"title": "someTitle1",
+		"title": "Wpływ Elona Muska na cenę dogecoina",
 		"category": "POP_CULTURE",
 		"coin": "dogecoin"
 	},
 	{
-		"endDate": "2021-04-01",
-		"startDate": "2021-06-01",
+		"endDate": "2021-06-01",
+		"startDate": "2021-04-01",
 		"url": "https://www.parkiet.com/waluty/art36287341-luna-historia-spadajacej-gwiazdy-kryptowalut",
-		"title": "someTitle2",
+		"title": "Upadek luny",
 		"category": "ECONOMY",
 		"coin": "terra-luna"
 	},
 	{
-		"endDate": "2022-01-01",
-		"startDate": "2023-01-01",
+		"endDate": "2023-01-01",
+		"startDate": "2022-01-01",
 		"url": "https://pl.investing.com/economic-calendar/interest-rate-decision-168",
-		"title": "someTitle3",
+		"title": "Wpływ stóp procentowych na cenę bitcoina",
+		"category": "ECONOMY",
+		"coin": "bitcoin"
+	},
+	{
+		"endDate": "2023-01-01",
+		"startDate": "2022-02-24",
+		"url": "https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99",
+		"title": "Inwazja wojsk Rosyjskich na Ukrainę",
+		"category": "ECONOMY",
+		"coin": "bitcoin"
+	},
+	{
+		"endDate": "2021-03-24",
+		"startDate": "2021-07-01",
+		"url": "https://twitter.com/elonmusk/status/1374617643446063105?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1374617643446063105%7Ctwgr%5Ea53b8128dc884c851155af974ff57c40e0466127%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fbithub.pl%2Fkryptowaluty%2Fbitcoin%2Ftesla-zaczela-akceptowac-platnosci-w-bitcoin%2F",
+		"title": "Tesla akceptuje płatności bitcoinem",
 		"category": "ECONOMY",
 		"coin": "bitcoin"
 	}
+
 ]
